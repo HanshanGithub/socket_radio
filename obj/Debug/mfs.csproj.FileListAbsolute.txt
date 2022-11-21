@@ -1,0 +1,72 @@
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\bin\Debug\mfs.exe.config
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\bin\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\bin\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.Form1.resources
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.Properties.Resources.resources
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\mfs\obj\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\bin\Debug\mfs.exe.config
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\bin\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\bin\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.Properties.Resources.resources
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mfs_prj\vs_exe\obj\Debug\mfs.Form1.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\Debug\mfs.exe.config
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.Form1.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.Properties.Resources.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\Debug\mfs.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\Debug\NAudio.dll
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\Debug\NAudio.xml
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\bin\Debug\mfs.exe.config
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\bin\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\bin\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\bin\Debug\NAudio.dll
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\bin\Debug\NAudio.xml
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.Form1.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.Properties.Resources.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_vsc#_exe\obj\Debug\mfs.csproj.GenerateResource.Cache
+E:\work_2021\mfs_prj\mfs_design\_vsexe\bin\Debug\mfs.exe.config
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.exe
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.pdb
+E:\work_2021\mfs_prj\mfs_design\_vsexe\bin\Debug\mfs.exe
+E:\work_2021\mfs_prj\mfs_design\_vsexe\bin\Debug\mfs.pdb
+E:\work_2021\mfs_prj\mfs_design\_vsexe\bin\Debug\NAudio.dll
+E:\work_2021\mfs_prj\mfs_design\_vsexe\bin\Debug\NAudio.xml
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.Form1.resources
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.Properties.Resources.resources
+E:\work_2021\mfs_prj\mfs_design\_vsexe\obj\Debug\mfs.csproj.GenerateResource.Cache
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\bin\Debug\mfs.exe.config
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.exe
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.pdb
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\bin\Debug\mfs.exe
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\bin\Debug\mfs.pdb
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\bin\Debug\NAudio.dll
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\bin\Debug\NAudio.xml
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.csprojResolveAssemblyReference.cache
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.Form1.resources
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.Properties.Resources.resources
+E:\work_2021\mfs_prj\mfs_design\_vsexe v1.0\obj\Debug\mfs.csproj.GenerateResource.Cache
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\bin\Debug\mfs.exe.config
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\bin\Debug\mfs.exe
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\bin\Debug\mfs.pdb
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\bin\Debug\NAudio.dll
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\bin\Debug\NAudio.xml
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.Form1.resources
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.Properties.Resources.resources
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.csproj.GenerateResource.Cache
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.exe
+E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.pdb

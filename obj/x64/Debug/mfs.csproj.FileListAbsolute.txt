@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\x64\Debug\mfs.exe.config
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\x64\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\x64\Debug\mfs.pdb
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\x64\Debug\NAudio.dll
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\bin\x64\Debug\NAudio.xml
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\x64\Debug\mfs.Form1.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\x64\Debug\mfs.Properties.Resources.resources
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\x64\Debug\mfs.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\x64\Debug\mfs.exe
+C:\Users\Administrator\Desktop\mfs_prj\mfs_design\_fpga_logic\vs_exe\obj\x64\Debug\mfs.pdb
