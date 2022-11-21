@@ -630,7 +630,7 @@ namespace mfs
                 {
                     //绘制实时频谱线条  // 2022-11-21 21:15 y=0的绿色直线(没有连接时),连接后为跳动的曲线
                     // 2022-11-21 21:19 选择华日算法模拟一下
-                    //if (checkBox3.Checked) // 2022-11-21 21:23 撤退了！明天解决绘制数据信息问题
+                    if (checkBox3.Checked) // 2022-11-21 21:23 撤退了！明天解决绘制数据信息问题
                         g.DrawLine(new Pen(Brushes.GreenYellow, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);
                     //绘制最大值频谱线  // 2022-11-21 21:17 y=-30的红色直线
                     g.DrawLine(new Pen(Brushes.Red, 1), window_left_offset + i, max_wave[i - 1], window_left_offset + i + 1, max_wave[i]);
