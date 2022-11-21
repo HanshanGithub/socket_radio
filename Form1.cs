@@ -593,7 +593,7 @@ namespace mfs
 
             return l_center_freq;
         }
-        //------------------------------------------------------------------------------------绘制频谱
+        //------------------------------------------------------------------------------------绘制频谱 //2022-11-21 21:03
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -750,11 +750,11 @@ namespace mfs
                 }
 
                 //显示绘制的bmp图片
-                pictureBox2.CreateGraphics().DrawImage(pbg_bmp, 0, 0);
+                pictureBox2.CreateGraphics().DrawImage(pbg_bmp, 0, 0); // 似乎连接到picture2，注释掉后picture2无内容 
                 //pictureBox1.Dispose();
                 //释放避免内存溢出
                 g.Dispose();
-                //bmp.Dispose();
+                //bmp.Dispose(;)
             }
         }
 

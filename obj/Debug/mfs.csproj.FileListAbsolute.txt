@@ -80,3 +80,4 @@ E:\GitRepository\socket_radio\bin\Debug\NAudio.xml
 E:\GitRepository\socket_radio\obj\Debug\mfs.Form1.resources
 E:\GitRepository\socket_radio\obj\Debug\mfs.Properties.Resources.resources
 E:\GitRepository\socket_radio\obj\Debug\mfs.csproj.GenerateResource.Cache
+E:\GitRepository\socket_radio\obj\Debug\mfs.csprojResolveAssemblyReference.cache
