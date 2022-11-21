@@ -597,7 +597,7 @@ namespace mfs
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height); // 频谱？？2022-11-21 21:07
             Graphics g = Graphics.FromImage(bmp);
 
             int val3_py = 0;
@@ -607,9 +607,9 @@ namespace mfs
             int max_py = 5000;
             int max_px = window_left_offset;
 
-            double l_center_freq = draw_box(g, 1600, 300, window_left_offset, window_top_offset);
+            double l_center_freq = draw_box(g, 1600, 300, window_left_offset, window_top_offset); //2022-11-21 21:11 猜测是坐标图像    // 2022-11-21 21:14 方便注释就注释掉分析
             
-            //将缓存数据压缩并绘制在画图板上
+            //将缓存数据压缩并绘制在画图板上       // 2022-11-21 21:12 猜测是绘制数据，数据来自哪里呢
             for (int i = 0; i < 1601; i++)
             {
                 int divx = (int)(show.ipan / show.span);
@@ -628,9 +628,11 @@ namespace mfs
 
                 if (i > 0)
                 {
-                    //绘制实时频谱线条
-                    g.DrawLine(new Pen(Brushes.GreenYellow, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);
-                    //绘制最大值频谱线
+                    //绘制实时频谱线条  // 2022-11-21 21:15 y=0的绿色直线(没有连接时),连接后为跳动的曲线
+                    // 2022-11-21 21:19 选择华日算法模拟一下
+                    //if (checkBox3.Checked) // 2022-11-21 21:23 撤退了！明天解决绘制数据信息问题
+                        g.DrawLine(new Pen(Brushes.GreenYellow, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);
+                    //绘制最大值频谱线  // 2022-11-21 21:17 y=-30的红色直线
                     g.DrawLine(new Pen(Brushes.Red, 1), window_left_offset + i, max_wave[i - 1], window_left_offset + i + 1, max_wave[i]);
                 }
 
@@ -687,8 +689,9 @@ namespace mfs
             g.DrawString("freq：" + show.cursor_freq.ToString() + "Mhz", new Font("宋体", 12), new SolidBrush(Color.GreenYellow), 1300, 30);
 
 
-            //显示绘制的bmp图片
-            pictureBox1.CreateGraphics().DrawImage(bmp, 0, 0);
+            //显示绘制的bmp图片 
+            // 2022-11-21 21:07 先画一个bmp图，然后把bmp图放在pictrue1上面显示
+            pictureBox1.CreateGraphics().DrawImage(bmp, 0, 0);  // 2022-11-21 21:09 注释后 picutre1,2 全黑
             //pictureBox1.Dispose();
             //释放避免内存溢出
             g.Dispose();
