@@ -889,6 +889,7 @@ namespace mfs
                             groupBox4.Enabled = (comboBox6.SelectedIndex > 0) ? false : true;
                             tcpClient_Send("mfs_path " + comboBox6.SelectedIndex.ToString() + "\r");
                             groupBox5.Enabled = true;
+                            groupBox7.Enabled = true;
                             timer_pbt.Enabled = true;
                             button_Click(button2, null);
                         }
@@ -905,6 +906,7 @@ namespace mfs
                         groupBox3.Enabled = false;
                         groupBox4.Enabled = false;
                         groupBox5.Enabled = false;
+                        groupBox7.Enabled = false;
                         timer_pbt.Enabled = false;
                         delect_socket();
                     }

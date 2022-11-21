@@ -70,3 +70,13 @@ E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.Properties.Re
 E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.csproj.GenerateResource.Cache
 E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.exe
 E:\work_2021\mfs_prj(ltc2209)\mfs_design\_vsexe v1.0\obj\Debug\mfs.pdb
+E:\GitRepository\socket_radio\bin\Debug\mfs.exe.config
+E:\GitRepository\socket_radio\obj\Debug\mfs.exe
+E:\GitRepository\socket_radio\obj\Debug\mfs.pdb
+E:\GitRepository\socket_radio\bin\Debug\mfs.exe
+E:\GitRepository\socket_radio\bin\Debug\mfs.pdb
+E:\GitRepository\socket_radio\bin\Debug\NAudio.dll
+E:\GitRepository\socket_radio\bin\Debug\NAudio.xml
+E:\GitRepository\socket_radio\obj\Debug\mfs.Form1.resources
+E:\GitRepository\socket_radio\obj\Debug\mfs.Properties.Resources.resources
+E:\GitRepository\socket_radio\obj\Debug\mfs.csproj.GenerateResource.Cache

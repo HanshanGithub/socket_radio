@@ -103,6 +103,8 @@
             this.timer_pbt = new System.Windows.Forms.Timer(this.components);
             this.timer_cal = new System.Windows.Forms.Timer(this.components);
             this.timer_sec = new System.Windows.Forms.Timer(this.components);
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,6 +116,7 @@
             this.subgroupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_fft
@@ -161,7 +164,7 @@
             this.TCPAddr.Name = "TCPAddr";
             this.TCPAddr.Size = new System.Drawing.Size(100, 21);
             this.TCPAddr.TabIndex = 3;
-            this.TCPAddr.Text = "192.168.1.100";
+            this.TCPAddr.Text = "192.168.102.11";
             // 
             // label1
             // 
@@ -276,7 +279,7 @@
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(614, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 133);
+            this.groupBox2.Size = new System.Drawing.Size(347, 133);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "频段扫描(MHz)";
@@ -515,9 +518,9 @@
             this.groupBox3.Controls.Add(this.subgroupBox2);
             this.groupBox3.Controls.Add(this.subgroupBox1);
             this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(931, 12);
+            this.groupBox3.Location = new System.Drawing.Point(967, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(741, 194);
+            this.groupBox3.Size = new System.Drawing.Size(705, 194);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "接收机调校";
@@ -531,7 +534,7 @@
             this.groupBox6.Controls.Add(this.button12);
             this.groupBox6.Controls.Add(this.textBox12);
             this.groupBox6.Controls.Add(this.button11);
-            this.groupBox6.Location = new System.Drawing.Point(295, 19);
+            this.groupBox6.Location = new System.Drawing.Point(260, 20);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(235, 168);
             this.groupBox6.TabIndex = 40;
@@ -619,7 +622,7 @@
             this.subgroupBox2.Controls.Add(this.label14);
             this.subgroupBox2.Controls.Add(this.textBox7);
             this.subgroupBox2.Controls.Add(this.label15);
-            this.subgroupBox2.Location = new System.Drawing.Point(536, 19);
+            this.subgroupBox2.Location = new System.Drawing.Point(501, 20);
             this.subgroupBox2.Name = "subgroupBox2";
             this.subgroupBox2.Size = new System.Drawing.Size(197, 168);
             this.subgroupBox2.TabIndex = 39;
@@ -701,16 +704,16 @@
             this.subgroupBox1.Controls.Add(this.textBox10);
             this.subgroupBox1.Controls.Add(this.label18);
             this.subgroupBox1.Controls.Add(this.button8);
-            this.subgroupBox1.Location = new System.Drawing.Point(30, 19);
+            this.subgroupBox1.Location = new System.Drawing.Point(17, 20);
             this.subgroupBox1.Name = "subgroupBox1";
-            this.subgroupBox1.Size = new System.Drawing.Size(259, 168);
+            this.subgroupBox1.Size = new System.Drawing.Size(237, 168);
             this.subgroupBox1.TabIndex = 38;
             this.subgroupBox1.TabStop = false;
             this.subgroupBox1.Text = "修正参数";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(169, 130);
+            this.button7.Location = new System.Drawing.Point(148, 129);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 28;
@@ -789,7 +792,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(169, 93);
+            this.button8.Location = new System.Drawing.Point(148, 92);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 20;
@@ -817,7 +820,7 @@
             this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(590, 150);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(335, 56);
+            this.groupBox5.Size = new System.Drawing.Size(247, 56);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "游标设置";
@@ -825,7 +828,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(40, 27);
+            this.checkBox1.Location = new System.Drawing.Point(6, 25);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 16);
             this.checkBox1.TabIndex = 29;
@@ -834,7 +837,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(136, 22);
+            this.button5.Location = new System.Drawing.Point(84, 22);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 26;
@@ -845,7 +848,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(247, 22);
+            this.button6.Location = new System.Drawing.Point(165, 22);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 27;
@@ -878,11 +881,33 @@
             this.timer_sec.Interval = 1000;
             this.timer_sec.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.checkBox3);
+            this.groupBox7.Location = new System.Drawing.Point(844, 150);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(117, 56);
+            this.groupBox7.TabIndex = 30;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "底噪";
+            this.groupBox7.Enabled = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(19, 25);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(72, 16);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "华日算法";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1684, 811);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label26);
@@ -917,6 +942,8 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -998,6 +1025,8 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 
