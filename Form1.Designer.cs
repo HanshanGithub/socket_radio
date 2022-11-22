@@ -353,7 +353,7 @@
             this.button1.Tag = "0";
             this.button1.Text = "连接";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_Click);
+            this.button1.Click += new System.EventHandler(this.button_Click);// 2022-11-22 15:33:21 
             // 
             // groupLink
             // 

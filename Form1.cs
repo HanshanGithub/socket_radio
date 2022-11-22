@@ -72,7 +72,7 @@ namespace mfs
         pcm_stream pcm = new pcm_stream();
 
         //------------------------------------------------------------------------------------全局变量
-        public struct app_define
+        public struct app_define// 2022-11-22 15:26:10 guess:曲线信息
         {
             //记录绘图区域鼠标位置
             public int px;               //绘图区域点击的x坐标
@@ -97,7 +97,7 @@ namespace mfs
             public int pack_count;       //用于计数频谱包个数
             public bool update;          //显示更新
         }
-        app_define show = new app_define();
+        app_define show = new app_define();// 2022-11-22 15:23:47
 
         //------------------------------------------------------------------------------------EM100接收机协议
         [StructLayout(LayoutKind.Sequential, CharSet=CharSet.Ansi, Pack=1)]  
@@ -256,9 +256,9 @@ namespace mfs
 
             show.center_freq = 107600000;
             show.ipan = 40000000;
-            show.start_freq = 20000000;
-            show.stop_freq = 420000000;
-            show.span = 40000000;
+            show.start_freq = 20000000;// 2022-11-22 15:31:12 20Mhz
+            show.stop_freq = 420000000;// 420Mhz
+            show.span = 40000000;// 40Mhz
 
             //初始化播放器
             try
@@ -280,7 +280,7 @@ namespace mfs
             button1.BackColor = Color.Green;
 
             //用于绘制瀑布图
-            pbg_bmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            pbg_bmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);// 2022-11-22 15:32:10 
 
             timer_pbt.Interval = timer_fft.Interval;
         }
@@ -455,8 +455,8 @@ namespace mfs
                     ifpan = (ifpan_stream)BytesToStruct(data, typeof(ifpan_stream));
                     //得到中心频率
                     UInt64 frequency = ((UInt64)ifpan.option.frequency_high << 32) + ifpan.option.frequency_low;
-                    //单频点数据复制到显示缓存
-                    if (show.ipan <= 40000000)
+                    //单频点数据复制到显示缓存 // 2022-11-22 12:05:57
+                    if (show.ipan <= 40000000)// 2022-11-22 15:17:17 40Mhz (M:megahertz)
                     {
                         show.center_freq = frequency;
 
@@ -544,7 +544,7 @@ namespace mfs
         }
         //------------------------------------------------------------------------------------绘制边框
         //返回当前中心频率
-        private double draw_box(Graphics g, int width, int height, int x1, int y1)
+        private double draw_box(Graphics g, int width, int height, int x1, int y1)// 2022-11-22 15:41:47 
         {
             //背景颜色
             g.FillRectangle(Brushes.Black, 0, 0, pictureBox1.Width, pictureBox1.Height);
@@ -597,7 +597,7 @@ namespace mfs
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height); // 频谱？？2022-11-21 21:07
+            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height); // 2022-11-21 21:07 bmp为图像，在上面绘制好了显示在picture1上面 
             Graphics g = Graphics.FromImage(bmp);
 
             int val3_py = 0;
@@ -730,7 +730,7 @@ namespace mfs
         {
             if (timer_fft.Enabled)
             {
-                Graphics g = Graphics.FromImage(pbg_bmp);
+                Graphics g = Graphics.FromImage(pbg_bmp); // 2022-11-22 15:39:14 瀑布图
 
                 //采用了全局pbg_bmp
                 /////////////////////////////////////////////////////////////
@@ -742,14 +742,16 @@ namespace mfs
                     //复制图片的下半部分并覆盖上半部分实现频谱流动效果
                     Rectangle srcRect = new Rectangle(0, 1, pbg_bmp.Width, pbg_bmp.Height);
                     Rectangle destRect = new Rectangle(0, 0, pbg_bmp.Width, pbg_bmp.Height);
-                    g.DrawImage(pbg_bmp, destRect, srcRect, GraphicsUnit.Pixel);
+                    g.DrawImage(pbg_bmp, destRect, srcRect, GraphicsUnit.Pixel);// 2022-11-22 15:49:47 
                 }
                 for (int i = 0; i < 1601; i++)
                 {
                     //始终只绘制一行
                     Color color = val_to_color(pbg_wave[i] / 10);
                     Brush brush = new SolidBrush(color);
-                    g.DrawLine(new Pen(brush, 1), window_left_offset + i, pbg_line, window_left_offset + i + 1, pbg_line);
+                    //public void DrawLine (System.Drawing.Pen pen, int x1, int y1, int x2, int y2);
+                    //g.DrawLine(new Pen(brush, 1), window_left_offset + i, pbg_line, window_left_offset + i + 1, pbg_line);// 2022-11-22 15:40:16 一行
+                    g.DrawLine(new Pen(brush, 1), window_left_offset + i, pbg_line, window_left_offset +i + 1, pbg_line);// 2022-11-22 15:41:00 
                 }
 
                 //显示绘制的bmp图片
@@ -850,7 +852,7 @@ namespace mfs
                  return;
              }
              groupBox4.Enabled = (comboBox6.SelectedIndex > 0) ? false : true;
-             tcpClient_Send("mfs_path " + comboBox6.SelectedIndex.ToString() + "\r");
+             tcpClient_Send("mfs_path " + comboBox6.SelectedIndex.ToString() + "\r");// 2022-11-22 15:34:12 
          }
         //------------------------------------------------------------------------------------鼠标点击事件
         private void Form1_MouseDown(object sender, MouseEventArgs e)
