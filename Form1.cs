@@ -45,8 +45,8 @@ namespace mfs
 
         private Socket tcpClient = null;//TCP句柄
 
-        //频谱图坐标偏移
-        static int window_left_offset = 40;
+        //频谱图坐标偏移// 2022-11-22 11:16 
+        static int window_left_offset = 40; 
         static int window_top_offset = 60;
 
         //频谱实时值缓存
@@ -446,7 +446,7 @@ namespace mfs
                     }
                 }
 
-                //单频点数据包解析
+                //单频点数据包解析 // 2022-11-22 11:37 
                 if (length == Marshal.SizeOf(ifpan))
                 {
                     //统计接收到的数据包
@@ -483,7 +483,7 @@ namespace mfs
                     }
                 }
 
-                //频段扫描数据包解析
+                //频段扫描数据包解析 // 2022-11-22 11:40:26
                 if (length == Marshal.SizeOf(pscan))
                 {
                     //统计接收到的数据包
@@ -601,13 +601,13 @@ namespace mfs
             Graphics g = Graphics.FromImage(bmp);
 
             int val3_py = 0;
-            int val3_px = window_left_offset;
+            int val3_px = window_left_offset; // window_left[top]_offset:频谱坐标偏移 line48
             int val3_buf = 0;
 
             int max_py = 5000;
             int max_px = window_left_offset;
 
-            double l_center_freq = draw_box(g, 1600, 300, window_left_offset, window_top_offset); //2022-11-21 21:11 猜测是坐标图像    // 2022-11-21 21:14 方便注释就注释掉分析
+            double l_center_freq = draw_box(g, 1600, 300, window_left_offset, window_top_offset); //// 2022-11-22 11:19 中心频率数值 freq
             
             //将缓存数据压缩并绘制在画图板上       // 2022-11-21 21:12 猜测是绘制数据，数据来自哪里呢
             for (int i = 0; i < 1601; i++)
@@ -629,9 +629,9 @@ namespace mfs
                 if (i > 0)
                 {
                     //绘制实时频谱线条  // 2022-11-21 21:15 y=0的绿色直线(没有连接时),连接后为跳动的曲线
-                    // 2022-11-21 21:19 选择华日算法模拟一下
-                    if (checkBox3.Checked) // 2022-11-21 21:23 撤退了！明天解决绘制数据信息问题
-                        g.DrawLine(new Pen(Brushes.GreenYellow, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);
+                    // 2022-11-21 21:19 选择华日算法模拟一下__
+                    if (checkBox3.Checked) // 2022-11-21 21:23 明天解决绘制数据信息问题
+                        g.DrawLine(new Pen(Brushes.MediumOrchid, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);// 2022-11-22 11:01 寻找数据信息
                     //绘制最大值频谱线  // 2022-11-21 21:17 y=-30的红色直线
                     g.DrawLine(new Pen(Brushes.Red, 1), window_left_offset + i, max_wave[i - 1], window_left_offset + i + 1, max_wave[i]);
                 }
@@ -668,13 +668,13 @@ namespace mfs
                 }
             }
             //频谱最大值
-            show.max_freq = l_center_freq + (((double)show.ipan / 1000000.0) / 1600) * (max_px - window_left_offset);
+            //show.max_freq = l_center_freq + (((double)show.ipan / 1000000.0) / 1600) * (max_px - window_left_offset);// 2022-11-22 11:05 未有明显变化
 
             //显示频谱中的最大点
             if (checkBox1.Checked)
             {
                 //标注频谱中的最大值
-                g.DrawString("▼", new Font("宋体", 12), new SolidBrush(Color.White), max_px - 9, max_py - 16);
+                g.DrawString("▼", new Font("宋体", 12), new SolidBrush(Color.White), max_px - 9, max_py - 16);// 2022-11-22 11:04 未有明显变化
                 //显示文字
                 //g.DrawString("dbuv：" + show.max_dbuv.ToString() + "dbuv", new Font("宋体", 12), new SolidBrush(Color.White), 1150, 10);
                 //show.max_freq = l_center_freq + (((double)show.ipan / 1000000.0) / 1600) * (max_px - window_left_offset);
@@ -685,7 +685,7 @@ namespace mfs
             g.DrawString("▼", new Font("宋体", 12), new SolidBrush(Color.GreenYellow), val3_px - 9, val3_py - 16);
             //显示鼠标点对应的文字
             g.DrawString("dbuv：" + show.cursor_dbuv.ToString() + "dbuv", new Font("宋体", 12), new SolidBrush(Color.GreenYellow), 1300, 10);
-            show.cursor_freq = l_center_freq + (((double)show.ipan / 1000000.0) / 1600) * (show.px - window_left_offset);
+            show.cursor_freq = l_center_freq + (((double)show.ipan / 1000000.0) / 1600) * (show.px - window_left_offset);// 2022-11-22 11:02 频率字体显示
             g.DrawString("freq：" + show.cursor_freq.ToString() + "Mhz", new Font("宋体", 12), new SolidBrush(Color.GreenYellow), 1300, 30);
 
 
@@ -810,9 +810,9 @@ namespace mfs
         //------------------------------------------------------------------------------------自动校准用时
          private void timer4_Tick(object sender, EventArgs e)
          {
-             //显示fft数据包率
+             //显示fft数据包率 2022-11-22 11:27 FPS速度:平均500
              if (show.ipan <= 40000000) {
-                 label26.Text = "扫描速度:" + show.pack_count.ToString() + "FPs";
+                 label26.Text = "扫描速度:" + show.pack_count.ToString() + "FPs"; 
              }
              else {
                  label26.Text = "扫描速度:" + ((float)((ulong)show.pack_count * show.span) / show.ipan).ToString("0.0") + "FPs";
