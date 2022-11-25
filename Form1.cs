@@ -200,18 +200,20 @@ namespace mfs
                 Marshal.FreeHGlobal(buffer);
             }
         }
-        public static object BytesToStruct(byte[] bytes, Type strcutType)
-        {
+        public static object BytesToStruct(byte[] bytes, Type strcutType) // 2022-11-24 17:10:04 解析数据包
+        {// 2022-11-24 20:40:21 
             Int32 size = Marshal.SizeOf(strcutType);
-            IntPtr buffer = Marshal.AllocHGlobal(size);
+            IntPtr buffer = Marshal.AllocHGlobal(size); //通过使用指定的字节数,从进程的非托管内存中分配内存。
             try
             {
-                Marshal.Copy(bytes, 0, buffer, size);
-                return Marshal.PtrToStructure(buffer, strcutType);
+                // void Marshal.Copy(byte[] source, int startIndex, IntPtr destination, int length)
+                Marshal.Copy(bytes, 0, buffer, size);// 将一维的托管8位无符号整数数组中的数据复制到非托管内存指针。
+                // object Marshal.PtrToStructure(IntPtr ptr,Type structureType)
+                return Marshal.PtrToStructure(buffer, strcutType); // 将数据从非托管内存块封送到新分配的指定类型的托管对象。
             }
             finally
             {
-                Marshal.FreeHGlobal(buffer);
+                Marshal.FreeHGlobal(buffer); // 释放以前从进程的非托管内存中分配的内存。
             }
         }
 
@@ -410,6 +412,7 @@ namespace mfs
         //------------------------------------------------------------------------------------UDP接收线程
         private void UDPReceiveMessage(object obj)
         {
+            int ps = 0;
             while (true)
             {
                 audio_stream audio = new audio_stream();
@@ -418,10 +421,21 @@ namespace mfs
                 byte[] data = new byte[16384];
                 int length = 0;
 
-                //阻塞接收udp数据包
+                //阻塞接收udp数据包 
                 try
                 {
-                    length = udpServes.Receive(data);
+                    // int Socket.Receive(byte[buffer) return The number of bytes received.
+                    length = udpServes.Receive(data);// 2022-11-24 17:14:58 
+                    if (length == 3270)// 2022-11-24 22:01:36 
+                        ps++;
+                    if (length == 12868)
+                    {
+                        Console.WriteLine(ps);
+                        Console.WriteLine(Marshal.SizeOf(audio));
+                        ps = 0;
+                    }
+                        
+                    //Console.WriteLine(length);// 2022-11-24 16:57:37 length:3270|12868 
                 }
                 catch
                 {
@@ -446,73 +460,63 @@ namespace mfs
                     }
                 }
 
-                //单频点数据包解析 // 2022-11-22 11:37 
-                if (length == Marshal.SizeOf(ifpan))
-                {
+                //单频点数据包解析 // 2022-11-22 11:37 与下面 频段扫描数据包解析 有何区别
+                if (length == Marshal.SizeOf(ifpan)) {
                     //统计接收到的数据包
                     show.pack_count++;
-                    //将收到的byte数据转换成结构体
+                    //将收到的byte数据转换成结构体 // 2022-11-24 17:09:06 
                     ifpan = (ifpan_stream)BytesToStruct(data, typeof(ifpan_stream));
                     //得到中心频率
                     UInt64 frequency = ((UInt64)ifpan.option.frequency_high << 32) + ifpan.option.frequency_low;
                     //单频点数据复制到显示缓存 // 2022-11-22 12:05:57
-                    if (show.ipan <= 40000000)// 2022-11-22 15:17:17 40Mhz (M:megahertz)
-                    {
+                    if (show.ipan <= 40000000){// 2022-11-22 15:17:17 40Mhz (M:megahertz)                    
                         show.center_freq = frequency;
-
                         //检查数据包是否有错乱数据(120.0dbuv~-70.0dbuv)
                         short max = ifpan.data.Max();
                         short min = ifpan.data.Min();
-                        if (max > 1000 || min < -500)
-                        {
+                        if (max > 1000 || min < -500) {
                             continue;
                         }
                         //避免漏频-频谱叠加处理
-                        if (show.update)
-                        {
+                        if (show.update) {
                             show.update = false;
                             fft_temp.CopyTo(fft_wave, 0);
                             ifpan.data.CopyTo(fft_temp, 0);
                         }
-                        else for (int i = 0; i < 1601; i++)
-                        {
+                        else for (int i = 0; i < 1601; i++) {
                             fft_temp[i] = (ifpan.data[i] > fft_temp[i]) ? ifpan.data[i] : fft_temp[i];
                         }
-
                         continue;
                     }
                 }
 
-                //频段扫描数据包解析 // 2022-11-22 11:40:26
-                if (length == Marshal.SizeOf(pscan))
-                {
+                //频段扫描数据包解析 // 2022-11-22 11:40:26 与上面 单频点数据包解析 有何区别
+                if (length == Marshal.SizeOf(pscan)) {
                     //统计接收到的数据包
                     show.pack_count++;
                     //频段扫描中心频率
                     show.center_freq = show.start_freq + show.ipan / 2;
                     //将收到的byte数据转换成结构体
-                    pscan = (pscan_stream)BytesToStruct(data, typeof(pscan_stream));
+                    pscan = (pscan_stream)BytesToStruct(data, typeof(pscan_stream));// 2022-11-24 17:09:43 pscan_strem
                     //得到开始频率
                     UInt64 start_freq = ((UInt64)pscan.option.StartFreq_high << 32) + pscan.option.StartFreq_low;
                     //得到结束频率
                     UInt64 stop_freq = ((UInt64)pscan.option.StopFreq_high << 32) + pscan.option.StopFreq_low;
                     //频率不在测量范围内
-                    if (show.start_freq > start_freq || show.stop_freq < stop_freq)
-                    {
+                    if (show.start_freq > start_freq || show.stop_freq < stop_freq) {
                         continue;
                     }
                     //计算数据包偏移
                     int offset = (int)((start_freq - show.start_freq) / show.span);
-
                     //检查数据包是否有错乱数据(120.0dbuv~-70.0dbuv)
                     short max = pscan.data.Max();
                     short min = pscan.data.Min();
-                    if (max > 1000 || min < -500)
-                    {
+                    if (max > 1000 || min < -500) {
                         continue;
                     }
                     //拷贝数据包
-                    pscan.data.CopyTo(fft_wave, offset * 1601);
+                    pscan.data.CopyTo(fft_wave, offset * 1601); // void Array.CopyTo(Array array, int index)
+                    // 将当前一维System.Array的所有元素复制到指定的一维System.Array中(从指定的目标System.Array 索引开始)。索引指定为32位整数。
                 }
             }
         }
