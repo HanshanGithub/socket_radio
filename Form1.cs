@@ -426,14 +426,14 @@ namespace mfs
                 {
                     // int Socket.Receive(byte[buffer) return The number of bytes received.
                     length = udpServes.Receive(data);// 2022-11-24 17:14:58 
-                    if (length == 3270)// 2022-11-24 22:01:36 
-                        ps++;
-                    if (length == 12868)
-                    {
-                        Console.WriteLine(ps);
-                        Console.WriteLine(Marshal.SizeOf(audio));
-                        ps = 0;
-                    }
+                    //if (length == 3270)// 2022-11-24 22:01:36 
+                    //    ps++;
+                    //if (length == 12868)
+                    //{
+                    //    Console.WriteLine(ps);
+                    //    Console.WriteLine(Marshal.SizeOf(audio));
+                    //    ps = 0;
+                    //}
                         
                     //Console.WriteLine(length);// 2022-11-24 16:57:37 length:3270|12868 
                 }
@@ -507,14 +507,14 @@ namespace mfs
                         continue;
                     }
                     //计算数据包偏移
-                    int offset = (int)((start_freq - show.start_freq) / show.span);
+                    int offset = (int)((start_freq - show.start_freq) / show.span); // 2022-12-10 21:52:00 第几个包
                     //检查数据包是否有错乱数据(120.0dbuv~-70.0dbuv)
                     short max = pscan.data.Max();
                     short min = pscan.data.Min();
                     if (max > 1000 || min < -500) {
                         continue;
                     }
-                    //拷贝数据包
+                    //拷贝数据包 2022-12-10 21:53:11 连接数据
                     pscan.data.CopyTo(fft_wave, offset * 1601); // void Array.CopyTo(Array array, int index)
                     // 将当前一维System.Array的所有元素复制到指定的一维System.Array中(从指定的目标System.Array 索引开始)。索引指定为32位整数。
                 }
@@ -617,25 +617,28 @@ namespace mfs
             for (int i = 0; i < 1601; i++)
             {
                 int divx = (int)(show.ipan / show.span);
+                // 2022-12-10 22:00:28 查看divx ans=1
+                //Console.WriteLine(divx);
                 divx = (divx > 0) ? divx : 1;
                 int val1 = -400;
                 int val2 = -400;
                 int val3 = 0;
                 //如果显示带宽大于show.span那么压缩数据
                 //针对频段扫描
+                // 2022-12-10 22:02:26 可能在这里添加底噪的值
                 for (int j = 0; j < divx; j++)
                 {
                     val1 = fft_wave[i * divx + j];
-                    val2 = (val1 > val2) ? val1 : val2;
+                    val2 = (val1 > val2) ? val1 : val2; // 2022-12-10 22:01:47 赋最大值
                     val3 = (Int16)(300 - (val2 / 5));
                     //val3 = 123;
                 }
 
                 if (i > 0)
                 {
-                    // 绘制底噪
+                    // 绘制底噪 2022-12-10 21:49:46 找到点对应坐标的位置
                     if (checkBox3.Checked){
-                        g.DrawLine(new Pen(Brushes.CornflowerBlue, 1), window_left_offset + i, 222, window_left_offset + i + 1, 222);
+                        g.DrawLine(new Pen(Brushes.CornflowerBlue, 1), window_left_offset + i, 300, window_left_offset + i + 1, 300);
                     }
                         
                     //绘制实时频谱线条  // 2022-11-21 21:15 y=0的绿色直线(没有连接时),连接后为跳动的曲线
