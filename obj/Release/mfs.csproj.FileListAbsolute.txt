@@ -1,0 +1,10 @@
+E:\GitRepository\socket_radio\bin\Release\mfs.exe.config
+E:\GitRepository\socket_radio\bin\Release\mfs.exe
+E:\GitRepository\socket_radio\bin\Release\mfs.pdb
+E:\GitRepository\socket_radio\bin\Release\NAudio.dll
+E:\GitRepository\socket_radio\bin\Release\NAudio.xml
+E:\GitRepository\socket_radio\obj\Release\mfs.Form1.resources
+E:\GitRepository\socket_radio\obj\Release\mfs.Properties.Resources.resources
+E:\GitRepository\socket_radio\obj\Release\mfs.csproj.GenerateResource.Cache
+E:\GitRepository\socket_radio\obj\Release\mfs.exe
+E:\GitRepository\socket_radio\obj\Release\mfs.pdb

@@ -628,13 +628,19 @@ namespace mfs
                     val1 = fft_wave[i * divx + j];
                     val2 = (val1 > val2) ? val1 : val2;
                     val3 = (Int16)(300 - (val2 / 5));
+                    //val3 = 123;
                 }
 
                 if (i > 0)
                 {
+                    // 绘制底噪
+                    if (checkBox3.Checked){
+                        g.DrawLine(new Pen(Brushes.CornflowerBlue, 1), window_left_offset + i, 222, window_left_offset + i + 1, 222);
+                    }
+                        
                     //绘制实时频谱线条  // 2022-11-21 21:15 y=0的绿色直线(没有连接时),连接后为跳动的曲线
                     // 2022-11-21 21:19 选择华日算法模拟一下__
-                    if (checkBox3.Checked) // 2022-11-21 21:23 明天解决绘制数据信息问题
+                    //if (checkBox3.Checked) // 2022-11-21 21:23 明天解决绘制数据信息问题
                         g.DrawLine(new Pen(Brushes.MediumOrchid, 1), window_left_offset + i, val3_buf, window_left_offset + i + 1, val3);// 2022-11-22 11:01 寻找数据信息
                     //绘制最大值频谱线  // 2022-11-21 21:17 y=-30的红色直线
                     g.DrawLine(new Pen(Brushes.Red, 1), window_left_offset + i, max_wave[i - 1], window_left_offset + i + 1, max_wave[i]);
