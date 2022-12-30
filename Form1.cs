@@ -613,22 +613,23 @@ namespace mfs
 
             double l_center_freq = draw_box(g, 1600, 300, window_left_offset, window_top_offset); //// 2022-11-22 11:19 中心频率数值 freq
             
-            //将缓存数据压缩并绘制在画图板上       // 2022-11-21 21:12 猜测是绘制数据，数据来自哪里呢
+            //将缓存数据压缩并绘制在画图板上       
             for (int i = 0; i < 1601; i++)
             {
-                int divx = (int)(show.ipan / show.span);
-                // 2022-12-10 22:00:28 查看divx ans=1
+                // divx=149
+                int divx = (int)(show.ipan / show.span);  // show.span:40Mhz show.ipan:5800Mhz
+                // 2022-12-10 22:00:28 查看divx result=1
                 //Console.WriteLine(divx);
-                divx = (divx > 0) ? divx : 1;
+                divx = (divx > 0) ? divx : 1; 
                 int val1 = -400;
                 int val2 = -400;
                 int val3 = 0;
                 //如果显示带宽大于show.span那么压缩数据
                 //针对频段扫描
                 // 2022-12-10 22:02:26 可能在这里添加底噪的值
-                for (int j = 0; j < divx; j++)
+                for (int j = 0; j < divx; j++) // 循环149次？应该为150吧？
                 {
-                    val1 = fft_wave[i * divx + j];
+                    val1 = fft_wave[i * divx + j]; 
                     val2 = (val1 > val2) ? val1 : val2; // 2022-12-10 22:01:47 赋最大值
                     val3 = (Int16)(300 - (val2 / 5));
                     //val3 = 123;
@@ -951,7 +952,7 @@ namespace mfs
                     show.start_freq = 0;
                     show.stop_freq = 0;
                     show.span = 40000000;
-                    show.ipan = ipan_freq(comboBox1.SelectedIndex);
+                    show.ipan = ipan_freq(comboBox1.SelectedIndex); // 40 MHz
                     tcpClient_Send("FREQ:SPAN " + show.ipan.ToString() + "\r");
 
                     break;
@@ -967,8 +968,8 @@ namespace mfs
 
                     groupBox3.Enabled = false;
 
-                    UInt64 strart_freq = (UInt64)(Convert.ToDouble(textBox3.Text) * 1000000);
-                    UInt64 stop_freq = (UInt64)(Convert.ToDouble(textBox5.Text) * 1000000);
+                    UInt64 strart_freq = (UInt64)(Convert.ToDouble(textBox3.Text) * 1000000); // 20 MHz
+                    UInt64 stop_freq = (UInt64)(Convert.ToDouble(textBox5.Text) * 1000000); //6000 MHz
                     UInt64 span_freq = 40000000;
                     if (comboBox2.SelectedIndex == 0) span_freq = 40000000;
                     if (comboBox2.SelectedIndex == 1) span_freq = 20000000;
