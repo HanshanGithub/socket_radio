@@ -105,6 +105,9 @@
             this.timer_sec = new System.Windows.Forms.Timer(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +120,8 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_fft
@@ -127,7 +132,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(212, 91);
+            this.button2.Location = new System.Drawing.Point(181, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -151,9 +156,9 @@
             "200KHz(分辨率125Hz)",
             "100KHz(分辨率62.5Hz)",
             "50KHz (分辨率31.25Hz)"});
-            this.comboBox1.Location = new System.Drawing.Point(83, 20);
+            this.comboBox1.Location = new System.Drawing.Point(75, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 20);
+            this.comboBox1.Size = new System.Drawing.Size(181, 20);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "40MHz(分辨率25KHz)";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -178,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 58);
+            this.label2.Location = new System.Drawing.Point(16, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 5;
@@ -187,7 +192,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 23);
+            this.label5.Location = new System.Drawing.Point(16, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 8;
@@ -195,7 +200,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 55);
+            this.textBox2.Location = new System.Drawing.Point(75, 55);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 10;
@@ -203,7 +208,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(87, 19);
+            this.textBox3.Location = new System.Drawing.Point(75, 21);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 21);
             this.textBox3.TabIndex = 13;
@@ -212,7 +217,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 24);
+            this.label7.Location = new System.Drawing.Point(16, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 16;
@@ -239,9 +244,9 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Enabled = false;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(309, 12);
+            this.groupBox1.Location = new System.Drawing.Point(297, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 133);
+            this.groupBox1.Size = new System.Drawing.Size(271, 133);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "单频点测量(MHz)";
@@ -251,7 +256,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "FM"});
-            this.comboBox5.Location = new System.Drawing.Point(83, 93);
+            this.comboBox5.Location = new System.Drawing.Point(75, 92);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(100, 20);
             this.comboBox5.TabIndex = 21;
@@ -260,7 +265,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 96);
+            this.label11.Location = new System.Drawing.Point(16, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 20;
@@ -277,9 +282,9 @@
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(614, 12);
+            this.groupBox2.Location = new System.Drawing.Point(574, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 133);
+            this.groupBox2.Size = new System.Drawing.Size(263, 133);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "频段扫描(MHz)";
@@ -287,7 +292,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(193, 24);
+            this.label17.Location = new System.Drawing.Point(181, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 21;
@@ -300,7 +305,7 @@
             "40MHz",
             "20MHz",
             "10MHz"});
-            this.comboBox2.Location = new System.Drawing.Point(87, 93);
+            this.comboBox2.Location = new System.Drawing.Point(75, 92);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 20);
             this.comboBox2.TabIndex = 19;
@@ -310,7 +315,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 96);
+            this.label3.Location = new System.Drawing.Point(16, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 18;
@@ -318,7 +323,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(223, 91);
+            this.button3.Location = new System.Drawing.Point(181, 91);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 17;
@@ -329,7 +334,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(87, 55);
+            this.textBox5.Location = new System.Drawing.Point(75, 55);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 21);
             this.textBox5.TabIndex = 15;
@@ -338,7 +343,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 58);
+            this.label8.Location = new System.Drawing.Point(16, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 14;
@@ -346,14 +351,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(201, 91);
+            this.button1.Location = new System.Drawing.Point(193, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
             this.button1.Tag = "0";
             this.button1.Text = "连接";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_Click);// 2022-11-22 15:33:21 
+            this.button1.Click += new System.EventHandler(this.button_Click);
             // 
             // groupLink
             // 
@@ -366,7 +371,7 @@
             this.groupLink.Controls.Add(this.label1);
             this.groupLink.Location = new System.Drawing.Point(12, 12);
             this.groupLink.Name = "groupLink";
-            this.groupLink.Size = new System.Drawing.Size(291, 133);
+            this.groupLink.Size = new System.Drawing.Size(279, 133);
             this.groupLink.TabIndex = 20;
             this.groupLink.TabStop = false;
             this.groupLink.Text = "连接接收机";
@@ -377,7 +382,7 @@
             this.comboBox6.Items.AddRange(new object[] {
             "宽带接收机",
             "AD9364"});
-            this.comboBox6.Location = new System.Drawing.Point(87, 93);
+            this.comboBox6.Location = new System.Drawing.Point(87, 92);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(100, 20);
             this.comboBox6.TabIndex = 21;
@@ -884,29 +889,62 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.checkBox3);
+            this.groupBox7.Enabled = false;
             this.groupBox7.Location = new System.Drawing.Point(844, 150);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(117, 56);
             this.groupBox7.TabIndex = 30;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "底噪";
-            this.groupBox7.Enabled = false;
+            this.groupBox7.Text = "信号提取";
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(19, 25);
+            this.checkBox3.Location = new System.Drawing.Point(6, 25);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(72, 16);
             this.checkBox3.TabIndex = 0;
             this.checkBox3.Text = "华日算法";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.checkBox4);
+            this.groupBox8.Enabled = false;
+            this.groupBox8.Location = new System.Drawing.Point(844, 14);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(117, 130);
+            this.groupBox8.TabIndex = 31;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "荧光频谱";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 23);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(84, 16);
+            this.checkBox4.TabIndex = 0;
+            this.checkBox4.Text = "显示频谱图";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 213);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1660, 587);
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1684, 811);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox5);
@@ -944,6 +982,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1027,6 +1068,9 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

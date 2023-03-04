@@ -600,7 +600,19 @@ namespace mfs
         //------------------------------------------------------------------------------------绘制频谱 //2022-11-21 21:03
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            // 荧光频谱的显示情况
+            if (checkBox4.Checked)
+            {
+                this.pictureBox3.Visible = true;
+                this.pictureBox1.Visible = false;
+                this.pictureBox2.Visible = false;
+            }
+            else
+            {
+                this.pictureBox3.Visible = false;
+                this.pictureBox1.Visible = true;
+                this.pictureBox2.Visible = true;
+            }
             Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height); // 2022-11-21 21:07 bmp为图像，在上面绘制好了显示在picture1上面 
             Graphics g = Graphics.FromImage(bmp);
 
@@ -616,7 +628,6 @@ namespace mfs
             //将缓存数据压缩并绘制在画图板上       
             for (int i = 0; i < 1601; i++)
             {
-                // divx=149
                 int divx = (int)(show.ipan / show.span);  // show.span:40Mhz show.ipan:5800Mhz
                 // 2022-12-10 22:00:28 查看divx result=1
                 //Console.WriteLine(divx);
@@ -627,7 +638,7 @@ namespace mfs
                 //如果显示带宽大于show.span那么压缩数据
                 //针对频段扫描
                 // 2022-12-10 22:02:26 可能在这里添加底噪的值
-                for (int j = 0; j < divx; j++) // 循环149次？应该为150吧？
+                for (int j = 0; j < divx; j++) 
                 {
                     val1 = fft_wave[i * divx + j]; 
                     val2 = (val1 > val2) ? val1 : val2; // 2022-12-10 22:01:47 赋最大值
@@ -909,6 +920,7 @@ namespace mfs
                             tcpClient_Send("mfs_path " + comboBox6.SelectedIndex.ToString() + "\r");
                             groupBox5.Enabled = true;
                             groupBox7.Enabled = true;
+                            groupBox8.Enabled = true;
                             timer_pbt.Enabled = true;
                             button_Click(button2, null);
                         }
@@ -926,6 +938,7 @@ namespace mfs
                         groupBox4.Enabled = false;
                         groupBox5.Enabled = false;
                         groupBox7.Enabled = false;
+                        groupBox8.Enabled = false;
                         timer_pbt.Enabled = false;
                         delect_socket();
                     }
