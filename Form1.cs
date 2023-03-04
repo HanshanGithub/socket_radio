@@ -412,7 +412,7 @@ namespace mfs
         //------------------------------------------------------------------------------------UDP接收线程
         private void UDPReceiveMessage(object obj)
         {
-            int ps = 0;
+            //int ps = 0;
             while (true)
             {
                 audio_stream audio = new audio_stream();
@@ -597,6 +597,14 @@ namespace mfs
 
             return l_center_freq;
         }
+
+        private void draw_dpx(Graphics gDpx)
+        {
+            //gDpx.DrawLine(new Pen(Brushes.Red, 31), new Point(55, 55), new Point(55, 555));
+            Random rd = new Random();
+            gDpx.DrawEllipse(new Pen(Brushes.Green, 2), new Rectangle(rd.Next(0, 1660), rd.Next(0, 587), 2, 2));
+        }
+
         //------------------------------------------------------------------------------------绘制频谱 //2022-11-21 21:03
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -606,6 +614,17 @@ namespace mfs
                 this.pictureBox3.Visible = true;
                 this.pictureBox1.Visible = false;
                 this.pictureBox2.Visible = false;
+                // 进入绘制荧光频谱的函数然后continue？
+                Bitmap bmpDpx = new Bitmap(pictureBox3.Width, pictureBox3.Height);
+                Graphics gDpx = Graphics.FromImage(bmpDpx);
+                draw_dpx(gDpx);
+
+
+                pictureBox3.CreateGraphics().DrawImage(bmpDpx, 0, 0);
+                // 释放内存
+                bmpDpx.Dispose();
+                gDpx.Dispose();
+                // 如何让下面不运行呢？运行是否费时呢？暂不修改
             }
             else
             {
@@ -613,6 +632,7 @@ namespace mfs
                 this.pictureBox1.Visible = true;
                 this.pictureBox2.Visible = true;
             }
+            
             Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height); // 2022-11-21 21:07 bmp为图像，在上面绘制好了显示在picture1上面 
             Graphics g = Graphics.FromImage(bmp);
 
@@ -728,6 +748,7 @@ namespace mfs
             textBox9.Text = (Convert.ToDouble(textBox6.Text) - Convert.ToDouble(textBox7.Text)).ToString("f1");
 
             show.update = true;
+            
         }
 
         //------------------------------------------------------------------------------------用颜色代表信号强度
