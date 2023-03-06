@@ -602,7 +602,7 @@ namespace mfs
         {
             //gDpx.DrawLine(new Pen(Brushes.Red, 31), new Point(55, 55), new Point(55, 555));
             Random rd = new Random();
-            gDpx.DrawEllipse(new Pen(Brushes.Green, 2), new Rectangle(rd.Next(0, 1660), rd.Next(0, 587), 2, 2));
+            gDpx.DrawEllipse(new Pen(Brushes.Green, 2), new Rectangle(rd.Next(0, pictureBox3.Width), rd.Next(0, pictureBox3.Height), 2, 2));
         }
 
         //------------------------------------------------------------------------------------绘制频谱 //2022-11-21 21:03
@@ -781,10 +781,10 @@ namespace mfs
                 //采用了全局pbg_bmp
                 /////////////////////////////////////////////////////////////
                 pbg_line += 1;
-                //瀑布图高度180
-                if (pbg_line > 179)
+                //瀑布图高度180，现在高度为293
+                if (pbg_line > 292)
                 {
-                    pbg_line = 179;
+                    pbg_line = 292;
                     //复制图片的下半部分并覆盖上半部分实现频谱流动效果
                     Rectangle srcRect = new Rectangle(0, 1, pbg_bmp.Width, pbg_bmp.Height);
                     Rectangle destRect = new Rectangle(0, 0, pbg_bmp.Width, pbg_bmp.Height);

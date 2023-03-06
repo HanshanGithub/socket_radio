@@ -867,7 +867,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox2.Location = new System.Drawing.Point(12, 619);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1660, 180);
+            this.pictureBox2.Size = new System.Drawing.Size(1660, 293);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
@@ -933,7 +933,7 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox3.Location = new System.Drawing.Point(12, 213);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1660, 587);
+            this.pictureBox3.Size = new System.Drawing.Size(1660, 700);
             this.pictureBox3.TabIndex = 32;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
@@ -942,7 +942,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 811);
+            this.ClientSize = new System.Drawing.Size(1684, 924);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
